@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var DBAccess: DatabaseAccess?
+    
+    func setupParse(launchOptions: [NSObject: AnyObject]?) {
+        Parse.enableLocalDatastore()
+        Parse.setApplicationId("73JV0YvepwnVJgCPgxztpOaRZGYTWSpYJGo4r3lH", clientKey:"HgY1gtfUZpJ67YbKqt7UvYDTvoe9hkAqhrIuXcn5")
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+    }
+    
+    func setupDBAccess() {
+        self.DBAccess = DatabaseAccess()
+    }
+    
+    func getCourseListFromAD(searchText: String, cb: ([String]) -> ()) {
+        self.DBAccess!.getCourseList(searchText, callback: cb)
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+        setupParse(launchOptions)
+        setupDBAccess()
+        
+        
         return true
     }
 

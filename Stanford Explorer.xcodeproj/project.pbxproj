@@ -8,12 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		7B06D0161B812A530067D1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0151B812A530067D1E9 /* AppDelegate.swift */; };
-		7B06D0181B812A530067D1E9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0171B812A530067D1E9 /* FirstViewController.swift */; };
-		7B06D01A1B812A530067D1E9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0191B812A530067D1E9 /* SecondViewController.swift */; };
 		7B06D01D1B812A530067D1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B06D01B1B812A530067D1E9 /* Main.storyboard */; };
 		7B06D01F1B812A530067D1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B06D01E1B812A530067D1E9 /* Images.xcassets */; };
 		7B06D0221B812A530067D1E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B06D0201B812A530067D1E9 /* LaunchScreen.xib */; };
 		7B06D02E1B812A530067D1E9 /* Stanford_ExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D02D1B812A530067D1E9 /* Stanford_ExplorerTests.swift */; };
+		7B06D03A1B813A770067D1E9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0391B813A770067D1E9 /* SearchViewController.swift */; };
+		7B06D03C1B813AAA0067D1E9 /* StoredCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D03B1B813AAA0067D1E9 /* StoredCoursesViewController.swift */; };
+		7B06D03E1B814D700067D1E9 /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D03D1B814D700067D1E9 /* DatabaseAccess.swift */; };
+		7B06D0451B814F950067D1E9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0441B814F950067D1E9 /* AudioToolbox.framework */; };
+		7B06D0481B814FAF0067D1E9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0461B814FAF0067D1E9 /* Bolts.framework */; };
+		7B06D0491B814FAF0067D1E9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0471B814FAF0067D1E9 /* Parse.framework */; };
+		7B06D04B1B814FC80067D1E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D04A1B814FC80067D1E9 /* CoreGraphics.framework */; };
+		7B06D04D1B814FD00067D1E9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D04C1B814FD00067D1E9 /* CFNetwork.framework */; };
+		7B06D04F1B814FD80067D1E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D04E1B814FD80067D1E9 /* CoreLocation.framework */; };
+		7B06D0511B814FDE0067D1E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0501B814FDE0067D1E9 /* QuartzCore.framework */; };
+		7B06D0531B814FE40067D1E9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0521B814FE40067D1E9 /* Security.framework */; };
+		7B06D0551B814FE90067D1E9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0541B814FE90067D1E9 /* StoreKit.framework */; };
+		7B06D0571B814FF00067D1E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0561B814FF00067D1E9 /* SystemConfiguration.framework */; };
+		7B06D0591B814FF80067D1E9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0581B814FF80067D1E9 /* libz.dylib */; };
+		7B06D05B1B8150010067D1E9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D05A1B8150010067D1E9 /* libsqlite3.dylib */; };
+		7B06D05D1B81500B0067D1E9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D05C1B81500B0067D1E9 /* Accounts.framework */; };
+		7B06D05F1B8150120067D1E9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D05E1B8150120067D1E9 /* Social.framework */; };
+		7B06D0631B8177AC0067D1E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0621B8177AC0067D1E9 /* MainViewController.swift */; };
+		7B06D0651B817C6D0067D1E9 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +47,31 @@
 		7B06D0101B812A530067D1E9 /* Stanford Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stanford Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B06D0141B812A530067D1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B06D0151B812A530067D1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B06D0171B812A530067D1E9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		7B06D0191B812A530067D1E9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7B06D01C1B812A530067D1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B06D01E1B812A530067D1E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7B06D0211B812A530067D1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7B06D0271B812A530067D1E9 /* Stanford ExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stanford ExplorerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B06D02C1B812A530067D1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B06D02D1B812A530067D1E9 /* Stanford_ExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stanford_ExplorerTests.swift; sourceTree = "<group>"; };
+		7B06D0391B813A770067D1E9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7B06D03B1B813AAA0067D1E9 /* StoredCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCoursesViewController.swift; sourceTree = "<group>"; };
+		7B06D03D1B814D700067D1E9 /* DatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
+		7B06D0441B814F950067D1E9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7B06D0461B814FAF0067D1E9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		7B06D0471B814FAF0067D1E9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		7B06D04A1B814FC80067D1E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7B06D04C1B814FD00067D1E9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7B06D04E1B814FD80067D1E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7B06D0501B814FDE0067D1E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7B06D0521B814FE40067D1E9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7B06D0541B814FE90067D1E9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7B06D0561B814FF00067D1E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7B06D0581B814FF80067D1E9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7B06D05A1B8150010067D1E9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7B06D05C1B81500B0067D1E9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		7B06D05E1B8150120067D1E9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		7B06D0621B8177AC0067D1E9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +79,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B06D05F1B8150120067D1E9 /* Social.framework in Frameworks */,
+				7B06D05D1B81500B0067D1E9 /* Accounts.framework in Frameworks */,
+				7B06D05B1B8150010067D1E9 /* libsqlite3.dylib in Frameworks */,
+				7B06D0591B814FF80067D1E9 /* libz.dylib in Frameworks */,
+				7B06D0571B814FF00067D1E9 /* SystemConfiguration.framework in Frameworks */,
+				7B06D0551B814FE90067D1E9 /* StoreKit.framework in Frameworks */,
+				7B06D0531B814FE40067D1E9 /* Security.framework in Frameworks */,
+				7B06D0511B814FDE0067D1E9 /* QuartzCore.framework in Frameworks */,
+				7B06D04F1B814FD80067D1E9 /* CoreLocation.framework in Frameworks */,
+				7B06D04D1B814FD00067D1E9 /* CFNetwork.framework in Frameworks */,
+				7B06D04B1B814FC80067D1E9 /* CoreGraphics.framework in Frameworks */,
+				7B06D0451B814F950067D1E9 /* AudioToolbox.framework in Frameworks */,
+				7B06D0491B814FAF0067D1E9 /* Parse.framework in Frameworks */,
+				7B06D0481B814FAF0067D1E9 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +112,7 @@
 				7B06D0121B812A530067D1E9 /* Stanford Explorer */,
 				7B06D02A1B812A530067D1E9 /* Stanford ExplorerTests */,
 				7B06D0111B812A530067D1E9 /* Products */,
+				7B06D0431B814F700067D1E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +129,11 @@
 			isa = PBXGroup;
 			children = (
 				7B06D0151B812A530067D1E9 /* AppDelegate.swift */,
-				7B06D0171B812A530067D1E9 /* FirstViewController.swift */,
-				7B06D0191B812A530067D1E9 /* SecondViewController.swift */,
+				7B06D03D1B814D700067D1E9 /* DatabaseAccess.swift */,
+				7B06D0621B8177AC0067D1E9 /* MainViewController.swift */,
+				7B06D0391B813A770067D1E9 /* SearchViewController.swift */,
+				7B06D03B1B813AAA0067D1E9 /* StoredCoursesViewController.swift */,
+				7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */,
 				7B06D01B1B812A530067D1E9 /* Main.storyboard */,
 				7B06D01E1B812A530067D1E9 /* Images.xcassets */,
 				7B06D0201B812A530067D1E9 /* LaunchScreen.xib */,
@@ -113,6 +165,28 @@
 				7B06D02C1B812A530067D1E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B06D0431B814F700067D1E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B06D05E1B8150120067D1E9 /* Social.framework */,
+				7B06D05C1B81500B0067D1E9 /* Accounts.framework */,
+				7B06D05A1B8150010067D1E9 /* libsqlite3.dylib */,
+				7B06D0581B814FF80067D1E9 /* libz.dylib */,
+				7B06D0561B814FF00067D1E9 /* SystemConfiguration.framework */,
+				7B06D0541B814FE90067D1E9 /* StoreKit.framework */,
+				7B06D0521B814FE40067D1E9 /* Security.framework */,
+				7B06D0501B814FDE0067D1E9 /* QuartzCore.framework */,
+				7B06D04E1B814FD80067D1E9 /* CoreLocation.framework */,
+				7B06D04C1B814FD00067D1E9 /* CFNetwork.framework */,
+				7B06D04A1B814FC80067D1E9 /* CoreGraphics.framework */,
+				7B06D0461B814FAF0067D1E9 /* Bolts.framework */,
+				7B06D0471B814FAF0067D1E9 /* Parse.framework */,
+				7B06D0441B814F950067D1E9 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			path = "Stanford Explorer.xcodeproj";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B06D01A1B812A530067D1E9 /* SecondViewController.swift in Sources */,
+				7B06D03E1B814D700067D1E9 /* DatabaseAccess.swift in Sources */,
+				7B06D03A1B813A770067D1E9 /* SearchViewController.swift in Sources */,
+				7B06D0631B8177AC0067D1E9 /* MainViewController.swift in Sources */,
+				7B06D03C1B813AAA0067D1E9 /* StoredCoursesViewController.swift in Sources */,
 				7B06D0161B812A530067D1E9 /* AppDelegate.swift in Sources */,
-				7B06D0181B812A530067D1E9 /* FirstViewController.swift in Sources */,
+				7B06D0651B817C6D0067D1E9 /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +421,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Stanford",
+					Explorer,
+					"$(PROJECT_DIR)/Stanford",
+					Explorer.xcodeproj,
+				);
 				INFOPLIST_FILE = "Stanford Explorer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +438,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Stanford",
+					Explorer,
+					"$(PROJECT_DIR)/Stanford",
+					Explorer.xcodeproj,
+				);
 				INFOPLIST_FILE = "Stanford Explorer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
