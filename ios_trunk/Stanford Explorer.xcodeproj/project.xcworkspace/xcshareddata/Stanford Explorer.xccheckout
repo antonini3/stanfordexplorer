@@ -14,7 +14,7 @@
 		<string>https://github.com/antonini3/stanfordexplorer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>xcode_trunk/Stanford Explorer.xcodeproj</string>
+	<string>ios_trunk/Stanford Explorer.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>246FC88793E60BFDD24879989FA6DDFF335597D2</key>

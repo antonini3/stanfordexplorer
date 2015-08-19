@@ -19,6 +19,7 @@ class CourseTableViewCell: UITableViewCell {
     
     func checkHeight() {
         descriptionLabel?.hidden = (frame.size.height < CourseTableViewCell.expandedHeight)
+        
     }
     
     func watchFrameChanges() {
