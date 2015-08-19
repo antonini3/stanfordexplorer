@@ -27,25 +27,29 @@ class DatabaseAccess {
         return regex
     }
     
-    func getCourseList(searchText: String, callback: ([String]) -> ()) {
+    func getCourseList(searchText: String, limit: Int, skip: Int, callback: ([String]) -> ()) {
         //If the user deletes everything in the query, we want to display nothing
         if searchText == "" {
             callback([])
         } else {
-            var query = PFQuery(className: "StanfordCourses2014")
+            var query = PFQuery(className: "exploreCourses2016")
             //we limit the query to 15
-            query.limit = 15
+            query.limit = limit
+            query.skip = skip
+            
             
             //we regex the query, for capitalization, spaces etc
             var regex = self.getRegexSearchTerm(searchText)
-            query.whereKey("title", matchesRegex: regex, modifiers: "i")
+            query.whereKey("full_title", matchesRegex: regex, modifiers: "i")
+            
+            NSLog(regex)
             
             query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
                 if error == nil {
                     var courses = objects as! [PFObject]
                     var course_titles: [String] = []
                     for c in courses {
-                        course_titles.append(c["title"] as! String)
+                        course_titles.append(c["full_title"] as! String)
                     }
                     callback(course_titles)
                 } else {

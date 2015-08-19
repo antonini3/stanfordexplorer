@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
         scrollView.pagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.scrollsToTop = false
     }
     
     override func didReceiveMemoryWarning() {

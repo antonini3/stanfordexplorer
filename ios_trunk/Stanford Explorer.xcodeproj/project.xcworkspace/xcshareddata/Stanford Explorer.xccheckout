@@ -14,11 +14,11 @@
 		<string>https://github.com/antonini3/stanfordexplorer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Stanford Explorer.xcodeproj</string>
+	<string>xcode_trunk/Stanford Explorer.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>246FC88793E60BFDD24879989FA6DDFF335597D2</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/antonini3/stanfordexplorer.git</string>

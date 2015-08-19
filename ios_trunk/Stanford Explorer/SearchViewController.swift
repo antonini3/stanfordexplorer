@@ -12,6 +12,8 @@ let cellID = "cell"
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    let NUM_ITEMS_PER_QUERY: Int = 15
+    
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var selectedIndexPath: NSIndexPath?
@@ -21,6 +23,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     @IBOutlet weak var courseTable: UITableView!
     
     var courses: [String]!
+    
+    var noMoreResults: Bool = false
+    
+    func setup() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillAppear:", name: UIKeyboardWillShowNotification, object: nil)
+        self.courseTable.scrollsToTop = true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,31 +42,44 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         self.courseTable.dataSource = self
         self.courseTable.tableFooterView = UIView(frame: CGRectZero)
         
-
-//        var textFieldInsideSearchBar = searchBar.valueForKey("searchField") as? UITextField
-//        textFieldInsideSearchBar?.textColor = UIColor.whiteColor()
-//        
-//        searchBar.setImage(UIImage(named: "SearchWhite"), forSearchBarIcon: UISearchBarIcon.Search, state: UIControlState.Normal);
-//        
-//        var searchTextField: UITextField? = searchBar.valueForKey("searchField") as? UITextField
-//        if searchTextField!.respondsToSelector(Selector("attributedPlaceholder")) {
-//            var color = UIColor.whiteColor()
-//            let attributeDict = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-//            searchTextField!.attributedPlaceholder = NSAttributedString(string: "Search for Courses", attributes: attributeDict)
-//        }
+        setup()
+        
     }
 
     func dismissKeyboard() {
         view.endEditing(true)
     }
     
+    func keyboardWillAppear(notification: NSNotification) {
+        var indexPaths: Array<NSIndexPath> = []
+        let previousIndexPath = selectedIndexPath
+        selectedIndexPath = nil
+        if let previous = previousIndexPath {
+            self.courseTable.reloadRowsAtIndexPaths([previous], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
+    
     func searchBar(_classSearch: UISearchBar, textDidChange searchText: String) {
-        appDelegate.getCourseListFromAD(searchText, cb: searchBarCallback)
+        noMoreResults = false
+        appDelegate.getCourseListFromAD(searchText, limit: NUM_ITEMS_PER_QUERY, skip: 0, cb: searchBarCallback)
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        appDelegate.getCourseListFromAD(searchBar.text, cb: searchBarCallback)
+        noMoreResults = false
+        appDelegate.getCourseListFromAD(searchBar.text, limit: NUM_ITEMS_PER_QUERY, skip: 0, cb: searchBarCallback)
         dismissKeyboard()
+    }
+    
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+//        selectedIndexPath = nil
+        return true
     }
         
     
@@ -70,6 +93,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         self.courseTable.reloadData()
     }
     
+    func searchBarReloadCallback(courses: [String]) {
+        if courses.count == 0 {
+            noMoreResults = true
+            return
+        }
+        var indexPaths: Array<NSIndexPath> = []
+        for var index = 0; index < NUM_ITEMS_PER_QUERY; ++index {
+            indexPaths.append(NSIndexPath(forItem: index + self.courses.count, inSection: 0))
+        }
+        self.courses.extend(courses)
+        self.courseTable.reloadData()
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.courses.count
     }
@@ -78,7 +114,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         var cell = self.courseTable.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! CourseTableViewCell
         cell.nameLabel.text = courses[indexPath.row]
         cell.descriptionLabel.text = "DESC OF " + courses[indexPath.row]
+        
+        if indexPath.row == self.courses.count - 1 && !noMoreResults {
+            self.launchReload()
+        }
+        
         return cell
+    }
+
+    
+    func launchReload() {
+        appDelegate.getCourseListFromAD(searchBar.text, limit: NUM_ITEMS_PER_QUERY, skip: courses.count, cb: searchBarReloadCallback)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

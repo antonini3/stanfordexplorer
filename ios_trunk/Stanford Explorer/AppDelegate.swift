@@ -10,6 +10,8 @@ import UIKit
 import Parse
 import Bolts
 
+var kStatusBarTappedNotification: NSString = "statusBarTappedNotification"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,12 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
     }
     
+
+    
     func setupDBAccess() {
         self.DBAccess = DatabaseAccess()
     }
     
-    func getCourseListFromAD(searchText: String, cb: ([String]) -> ()) {
-        self.DBAccess!.getCourseList(searchText, callback: cb)
+    func getCourseListFromAD(searchText: String, limit: Int, skip: Int, cb: ([String]) -> ()) {
+        self.DBAccess!.getCourseList(searchText, limit: limit, skip: skip, callback: cb)
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

@@ -15,7 +15,7 @@ class CourseTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     class var expandedHeight: CGFloat { get { return 200 } }
-    class var defaultHeight: CGFloat { get { return 44 } }
+    class var defaultHeight: CGFloat { get { return 100 } }
     
     func checkHeight() {
         descriptionLabel?.hidden = (frame.size.height < CourseTableViewCell.expandedHeight)
