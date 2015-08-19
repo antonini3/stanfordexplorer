@@ -13,7 +13,6 @@ searchable:
 	typos:
 		levenshtein
 		dynamic programming
-
 """
 
 def parse_query_search(class_data, query):
@@ -24,7 +23,7 @@ def parse_query_search(class_data, query):
 	course_title_match = match_by('title', class_data, parsed_query)
 	course_description_match = match_by('description', class_data, parsed_query)
 	classes = sort_matches([course_prefix_match, course_suffix_match, course_title_match, course_description_match], weights=[100, 15, 50, 10])
-
+	print classes
 def sort_matches(matches, weights=None):
 	if weights is None:
 		weights = [1] * len(matches)
@@ -33,8 +32,7 @@ def sort_matches(matches, weights=None):
 		for course in match:
 			course_weights[course['full_title']] += weights[i]
 
-	print course_weights.most_common(10)
-
+	return course_weights.most_common(10)
 
 def match_by(match, class_data, parsed_query):
 	classes = set()
