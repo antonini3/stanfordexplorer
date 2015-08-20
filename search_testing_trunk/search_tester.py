@@ -24,6 +24,7 @@ def parse_query_search(class_data, query):
 	course_description_match = match_by('description', class_data, parsed_query)
 	classes = sort_matches([course_prefix_match, course_suffix_match, course_title_match, course_description_match], weights=[100, 15, 50, 10])
 	print classes
+	
 def sort_matches(matches, weights=None):
 	if weights is None:
 		weights = [1] * len(matches)
