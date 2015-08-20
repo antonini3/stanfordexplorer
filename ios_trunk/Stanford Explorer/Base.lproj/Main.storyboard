@@ -72,7 +72,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="wo9-MH-4em"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsC-5a-HNK">
@@ -82,9 +82,18 @@
                                                         <constraint firstAttribute="width" constant="385" id="f0b-Ii-0E4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAK-sk-X1J">
+                                                    <rect key="frame" x="17" y="80" width="427" height="30"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="storeButton:" destination="n5w-LO-exc" eventType="touchUpInside" id="phP-N4-I4S"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Cp3-fx-DWR" firstAttribute="top" secondItem="g1S-xR-Qhh" secondAttribute="top" constant="8" id="IMM-U3-j7v"/>
@@ -97,6 +106,7 @@
                                         <connections>
                                             <outlet property="descriptionLabel" destination="MsC-5a-HNK" id="3hh-Yx-nBy"/>
                                             <outlet property="nameLabel" destination="Cp3-fx-DWR" id="LLz-yz-Jid"/>
+                                            <outlet property="storeButtonOutlet" destination="XAK-sk-X1J" id="Ujy-HI-tM1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -139,14 +149,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ameeqa was here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OME-6y-4KA">
-                                <rect key="frame" x="80" y="357" width="138" height="21"/>
+                                <rect key="frame" x="106" y="77" width="406" height="437"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="courseList" destination="OME-6y-4KA" id="aVN-On-6Eh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

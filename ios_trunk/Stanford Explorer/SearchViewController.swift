@@ -22,7 +22,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     @IBOutlet weak var courseTable: UITableView!
     
-    var courses: [String]!
+    var courses: [Course]!
     
     var noMoreResults: Bool = false
     
@@ -88,12 +88,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    func searchBarCallback(courses: [String]) {
+    func searchBarCallback(courses: [Course]) {
         self.courses = courses
         self.courseTable.reloadData()
     }
     
-    func searchBarReloadCallback(courses: [String]) {
+    func searchBarReloadCallback(courses: [Course]) {
         if courses.count == 0 {
             noMoreResults = true
             return
@@ -112,12 +112,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.courseTable.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! CourseTableViewCell
-        cell.nameLabel.text = courses[indexPath.row]
-        cell.descriptionLabel.text = "DESC OF " + courses[indexPath.row]
+        cell.nameLabel.text = courses[indexPath.row].courseTitle
+//        cell.descriptionLabel.text = "DESC OF " + courses[indexPath.row].courseTitle!
         
         if indexPath.row == self.courses.count - 1 && !noMoreResults {
             self.launchReload()
         }
+        
+        cell.course = courses[indexPath.row]
+        
+        cell.courseStored = appDelegate.isCourseStored(courses[indexPath.row])
         
         return cell
     }

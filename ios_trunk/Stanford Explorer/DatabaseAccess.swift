@@ -27,7 +27,7 @@ class DatabaseAccess {
         return regex
     }
     
-    func getCourseList(searchText: String, limit: Int, skip: Int, callback: ([String]) -> ()) {
+    func getCourseList(searchText: String, limit: Int, skip: Int, callback: ([Course]) -> ()) {
         //If the user deletes everything in the query, we want to display nothing
         if searchText == "" {
             callback([])
@@ -47,9 +47,9 @@ class DatabaseAccess {
             query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
                 if error == nil {
                     var courses = objects as! [PFObject]
-                    var course_titles: [String] = []
+                    var course_titles: [Course] = []
                     for c in courses {
-                        course_titles.append(c["full_title"] as! String)
+                        course_titles.append(Course(course: c["full_title"] as! String))
                     }
                     callback(course_titles)
                 } else {

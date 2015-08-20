@@ -31,6 +31,8 @@
 		7BCF92D51B84021200DCAE4E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCF92D31B84021200DCAE4E /* Bolts.framework */; };
 		7BCF92D61B84021200DCAE4E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCF92D41B84021200DCAE4E /* Parse.framework */; };
 		7BCF92D81B84443E00DCAE4E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92D71B84443E00DCAE4E /* Utils.swift */; };
+		7BCF92DA1B85678E00DCAE4E /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92D91B85678E00DCAE4E /* Course.swift */; };
+		7BCF92DE1B856AB400DCAE4E /* LocalDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		7BCF92D31B84021200DCAE4E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../Downloads/parse-library-1.8.0/Bolts.framework"; sourceTree = "<group>"; };
 		7BCF92D41B84021200DCAE4E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../../Downloads/parse-library-1.8.0/Parse.framework"; sourceTree = "<group>"; };
 		7BCF92D71B84443E00DCAE4E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		7BCF92D91B85678E00DCAE4E /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDatastore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				7B06D0391B813A770067D1E9 /* SearchViewController.swift */,
 				7B06D03B1B813AAA0067D1E9 /* StoredCoursesViewController.swift */,
 				7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */,
+				7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */,
+				7BCF92D91B85678E00DCAE4E /* Course.swift */,
 				7BCF92D71B84443E00DCAE4E /* Utils.swift */,
 				7B06D01B1B812A530067D1E9 /* Main.storyboard */,
 				7B06D01E1B812A530067D1E9 /* Images.xcassets */,
@@ -288,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BCF92DA1B85678E00DCAE4E /* Course.swift in Sources */,
+				7BCF92DE1B856AB400DCAE4E /* LocalDatastore.swift in Sources */,
 				7B06D03E1B814D700067D1E9 /* DatabaseAccess.swift in Sources */,
 				7B06D03A1B813A770067D1E9 /* SearchViewController.swift in Sources */,
 				7B06D0631B8177AC0067D1E9 /* MainViewController.swift in Sources */,

@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var DBAccess: DatabaseAccess?
     
+    var localDatastore: LocalDatastore?
+    
     func setupParse(launchOptions: [NSObject: AnyObject]?) {
         Parse.enableLocalDatastore()
         Parse.setApplicationId("73JV0YvepwnVJgCPgxztpOaRZGYTWSpYJGo4r3lH", clientKey:"HgY1gtfUZpJ67YbKqt7UvYDTvoe9hkAqhrIuXcn5")
@@ -31,8 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.DBAccess = DatabaseAccess()
     }
     
-    func getCourseListFromAD(searchText: String, limit: Int, skip: Int, cb: ([String]) -> ()) {
+    func setupLocalDatastore() {
+        self.localDatastore = LocalDatastore()
+    }
+    
+    func getCourseListFromAD(searchText: String, limit: Int, skip: Int, cb: ([Course]) -> ()) {
         self.DBAccess!.getCourseList(searchText, limit: limit, skip: skip, callback: cb)
+    }
+    
+    func getStoredCourses(cb: ([Course]) -> ()) {
+        self.localDatastore!.getStoredCourses(cb)
+    }
+    
+    func storeCourse(courseStored: Bool, course: Course) {
+        localDatastore!.storeCourse(courseStored, course: course)
+    }
+    
+    func isCourseStored(course: Course) -> Bool {
+        return localDatastore!.isCourseStored(course)
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -40,8 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
         setupParse(launchOptions)
-        setupDBAccess()
         
+        setupDBAccess()
+        setupLocalDatastore()
         
         return true
     }
