@@ -3,3 +3,4 @@ StanfordExplorerCourses.iml
 .DS_Store
 .idea/
 *.pyc
+*.dat
