@@ -8,29 +8,18 @@
 
 import UIKit
 
-class StoredCoursesViewController: UIViewController {
+class StoredCoursesViewController: UIViewControllerWrapper {
     
-    @IBOutlet weak var courseList: UILabel!
+    var courseTableViewController: CourseTableViewController?
     
-    var storedCourses: [Course]?
-    
+
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        appDelegate.getStoredCourses(getStoredCoursesCallback)
         
-    }
-    
-    func getStoredCoursesCallback(courses: [Course]) {
-        storedCourses = courses
-        var str = ""
-        for c in courses {
-            str += "\n" + c.courseTitle!
-        }
-        courseList.text = str
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -40,6 +29,18 @@ class StoredCoursesViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "storedCourseTableViewControllerSegue" {
+            self.courseTableViewController = (segue.destinationViewController as! CourseTableViewController)
+            self.courseTableViewController?.parentVC = self
+        }
+    }
+    
+    override func changedCourse(course: Course, newState: Bool, indexPath: NSIndexPath) {
+        self.courseTableViewController?.reloadStoredCourse(course, newState: newState, indexPath: indexPath)
     }
     
     

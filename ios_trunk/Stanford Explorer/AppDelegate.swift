@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.enableLocalDatastore()
         Parse.setApplicationId("73JV0YvepwnVJgCPgxztpOaRZGYTWSpYJGo4r3lH", clientKey:"HgY1gtfUZpJ67YbKqt7UvYDTvoe9hkAqhrIuXcn5")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
     }
     
 
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupLocalDatastore() {
         self.localDatastore = LocalDatastore()
+        localDatastore?.clear()
     }
     
     func getCourseListFromAD(searchText: String, limit: Int, skip: Int, cb: ([Course]) -> ()) {
@@ -51,6 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func isCourseStored(course: Course) -> Bool {
         return localDatastore!.isCourseStored(course)
+    }
+    
+    func getStoredCourseListFromAD(callback: ([Course]) -> ()) {
+        self.localDatastore!.getStoredCourses(callback)
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

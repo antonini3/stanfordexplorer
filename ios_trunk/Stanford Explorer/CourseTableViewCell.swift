@@ -19,20 +19,32 @@ class CourseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var parentVC: UIViewControllerWrapper?
     
-//    @IBAction func storeCourse(sender: AnyObject) {
-////        courseStored = !courseStored
-////        appDelegate.storeCourse(courseStored, course: course!)
-//    }
+    var observer: Bool = false
+    
+    var indexPath: NSIndexPath?
+    
+    
+    @IBAction func storeCourse(sender: AnyObject) {
+        courseStored = !courseStored!
+        resetCourseStoredTitle()
+        appDelegate.storeCourse(courseStored!, course: course!)
+        parentVC?.changedCourse(course!, newState: courseStored!, indexPath: indexPath!)
+    }
     
     
     var courseStored: Bool? {
         didSet {
-            if courseStored != nil && courseStored == false {
-                storeButtonOutlet.setTitle("NOT SAVED", forState: .Normal)
-            } else {
-                storeButtonOutlet.setTitle("CLASS SAVED", forState: .Normal)
-            }
+            resetCourseStoredTitle()
+        }
+    }
+    
+    func resetCourseStoredTitle() {
+        if courseStored != nil && courseStored == false {
+            storeButtonOutlet.setTitle("NOT SAVED", forState: .Normal)
+        } else {
+            storeButtonOutlet.setTitle("CLASS SAVED", forState: .Normal)
         }
     }
     
@@ -41,10 +53,6 @@ class CourseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var storeButtonOutlet: UIButton!
     
-    @IBAction func storeButton(sender: AnyObject) {
-        courseStored = (courseStored != true)
-        appDelegate.storeCourse(courseStored!, course: course!)
-    }
     func checkHeight() {
         var shouldHide = (frame.size.height < CourseTableViewCell.expandedHeight)
         descriptionLabel?.hidden = shouldHide
@@ -53,11 +61,15 @@ class CourseTableViewCell: UITableViewCell {
     
     func watchFrameChanges() {
         addObserver(self, forKeyPath: "frame", options: .New, context: nil)
+        observer = true
         checkHeight()
     }
     
     func ignoreFrameChanges() {
-        removeObserver(self, forKeyPath: "frame")
+        if observer {
+            removeObserver(self, forKeyPath: "frame")
+            observer = false
+        }
     }
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {

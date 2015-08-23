@@ -17,6 +17,10 @@ class Course {
     }
     
     init(elem: PFObject) {
-        courseTitle = elem["title"] as? String
+        courseTitle = elem["title"] as! String
+    }
+    
+    func getTitle() -> String {
+        return courseTitle!
     }
 }

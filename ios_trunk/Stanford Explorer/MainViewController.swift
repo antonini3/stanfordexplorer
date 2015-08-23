@@ -13,6 +13,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var searchVC: SearchViewController?
+    
+    var storedCoursesVC: StoredCoursesViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.bounces = false
@@ -32,25 +36,25 @@ class MainViewController: UIViewController {
     }
     
     func initScrollView(){
-        let viewController1 = storyboard?.instantiateViewControllerWithIdentifier("SearchViewController") as! SearchViewController
+        searchVC = storyboard?.instantiateViewControllerWithIdentifier("SearchViewController") as? SearchViewController
         
-        viewController1.willMoveToParentViewController(self)
-        viewController1.view.frame = scrollView.bounds
+        searchVC!.willMoveToParentViewController(self)
+        searchVC!.view.frame = scrollView.bounds
         
-        let viewController2 = storyboard?.instantiateViewControllerWithIdentifier("StoredCoursesViewController") as! StoredCoursesViewController
+        storedCoursesVC = storyboard?.instantiateViewControllerWithIdentifier("StoredCoursesViewController") as? StoredCoursesViewController
         
-        viewController2.willMoveToParentViewController(self)
-        viewController2.view.frame.size = scrollView.frame.size
-        viewController2.view.frame.origin = CGPoint(x: view.frame.width, y: 0)
+        storedCoursesVC!.willMoveToParentViewController(self)
+        storedCoursesVC!.view.frame.size = scrollView.frame.size
+        storedCoursesVC!.view.frame.origin = CGPoint(x: view.frame.width, y: 0)
         
         scrollView.contentSize = CGSize(width: 2 * scrollView.frame.width, height: scrollView.frame.height)
         
-        scrollView.addSubview(viewController2.view)
-        self.addChildViewController(viewController2)
-        viewController2.didMoveToParentViewController(self)
+        scrollView.addSubview(storedCoursesVC!.view)
+        self.addChildViewController(storedCoursesVC!)
+        storedCoursesVC!.didMoveToParentViewController(self)
         
-        scrollView.addSubview(viewController1.view)
-        self.addChildViewController(viewController1)
-        viewController1.didMoveToParentViewController(self)
+        scrollView.addSubview(searchVC!.view)
+        self.addChildViewController(searchVC!)
+        searchVC!.didMoveToParentViewController(self)
     }
 }

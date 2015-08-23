@@ -49,7 +49,8 @@ class DatabaseAccess {
                     var courses = objects as! [PFObject]
                     var course_titles: [Course] = []
                     for c in courses {
-                        course_titles.append(Course(course: c["full_title"] as! String))
+                        var newCourse = Course(course: c["full_title"] as! String)
+                        course_titles.append(newCourse)
                     }
                     callback(course_titles)
                 } else {
