@@ -53,9 +53,9 @@ class CourseTableViewCell: UITableViewCell {
     
     func resetCourseStoredTitle() {
         if courseStored != nil && courseStored == false {
-            storeButtonOutlet.setTitle("NOT SAVED", forState: .Normal)
+            storeButtonOutlet.selected = false
         } else {
-            storeButtonOutlet.setTitle("CLASS SAVED", forState: .Normal)
+            storeButtonOutlet.selected = true
         }
     }
     
