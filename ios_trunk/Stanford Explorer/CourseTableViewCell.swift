@@ -23,14 +23,25 @@ class CourseTableViewCell: UITableViewCell {
     
     var observer: Bool = false
     
-    var indexPath: NSIndexPath?
-    
-    
     @IBAction func storeCourse(sender: AnyObject) {
         courseStored = !courseStored!
-        resetCourseStoredTitle()
         appDelegate.storeCourse(courseStored!, course: course!)
-        parentVC?.changedCourse(course!, newState: courseStored!, indexPath: indexPath!)
+        
+        if let tempParentVC = self.parentVC {
+            if let tempParentVC = tempParentVC as? StoredCoursesViewController {
+                if courseStored! {
+                    NSLog("Trying to store a course already stored; logical inconsistency")
+                } else {
+                    self.parentVC?.fromStoredCourseUpdateToUnsaved(course!)
+                }
+            } else if let tempParentVC = tempParentVC as? SearchViewController {
+                if courseStored! {
+                    self.parentVC?.fromSearchUpdateToSaved(course!)
+                } else {
+                    self.parentVC?.fromSearchUpdateToUnsaved(course!)
+                }
+            }
+        }
     }
     
     

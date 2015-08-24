@@ -74,14 +74,6 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    func reloadStoredCourse(course: Course, newState: Bool, indexPath: NSIndexPath) {
-        if newState == false {
-            self.courseTable.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        } else {
-            reloadStoredCourses()
-        }
-    }
-    
     func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -166,9 +158,7 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
         cell.courseStored = appDelegate.isCourseStored(courses[indexPath.row])
         
         cell.parentVC = self.parentVC
-        
-        cell.indexPath = indexPath
-        
+
         return cell
     }
     
@@ -216,6 +206,39 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
             return CourseTableViewCell.expandedHeight
         } else {
             return CourseTableViewCell.defaultHeight
+        }
+    }
+    
+    func removeCourseWithAnimation(course: Course) {
+        for var i = 0; i < self.courses.count; ++i {
+            if self.courses[i] == course {
+                var indexPath = NSIndexPath(forRow: i, inSection: 0)
+                updateSelectedPathFromIndex(indexPath)
+                self.courses.removeAtIndex(i)
+                self.courseTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                return
+            }
+        }
+    }
+    
+    func updateCell(course: Course, newState: Bool) {
+        for var i = 0; i < self.courses.count; ++i {
+            if self.courses[i] == course {
+                var index = NSIndexPath(forRow: i, inSection: 0)
+                var cell = self.courseTable.cellForRowAtIndexPath(index) as! CourseTableViewCell
+                cell.courseStored = newState
+                return
+            }
+        }
+    }
+    
+    func updateSelectedPathFromIndex(indexPath: NSIndexPath) {
+        if selectedIndexPath != nil {
+            if indexPath.row < selectedIndexPath?.row {
+                selectedIndexPath = NSIndexPath(forRow: selectedIndexPath!.row - 1, inSection: 0)
+            } else if indexPath.row == selectedIndexPath!.row {
+                selectedIndexPath = nil
+            }
         }
     }
     

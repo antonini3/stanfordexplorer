@@ -33,7 +33,7 @@ class LocalDatastore {
             query.whereKey("title", equalTo: courseTitle)
             query.fromLocalDatastore()
             var courseToDelete = query.getFirstObject()
-            courseToDelete?.unpinInBackground()
+            courseToDelete?.unpin()
         }
     }
     

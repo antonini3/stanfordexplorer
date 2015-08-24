@@ -24,3 +24,7 @@ class Course {
         return courseTitle!
     }
 }
+
+func == (lhs: Course, rhs: Course) -> Bool {
+    return (lhs.courseTitle == rhs.courseTitle)
+}

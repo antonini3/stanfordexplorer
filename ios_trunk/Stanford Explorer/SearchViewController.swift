@@ -68,13 +68,18 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
 //        return true
 //    }
     
-    override func changedCourse(course: Course, newState: Bool, indexPath: NSIndexPath) {
-        (self.parentViewController as! MainViewController).storedCoursesVC?.changedCourse(course, newState: newState, indexPath: indexPath)
-    }
     
     func keyboardWillAppear(notification: NSNotification) {
         self.courseTableViewController?.clearExpandedCell(true)
-        
+    }
+    
+    override func fromSearchUpdateToSaved(course: Course) {
+        (self.parentViewController as! MainViewController).storedCoursesVC?.courseTableViewController?.reloadStoredCourses()
+    }
+    
+    override func fromSearchUpdateToUnsaved(course: Course) {
+        var storedCourseTableVC = (self.parentViewController as! MainViewController).storedCoursesVC?.courseTableViewController
+        storedCourseTableVC?.removeCourseWithAnimation(course)
     }
     
 }

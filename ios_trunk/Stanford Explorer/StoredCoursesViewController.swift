@@ -24,6 +24,7 @@ class StoredCoursesViewController: UIViewControllerWrapper {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        courseTableViewController?.reloadStoredCourses()
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,8 +40,9 @@ class StoredCoursesViewController: UIViewControllerWrapper {
         }
     }
     
-    override func changedCourse(course: Course, newState: Bool, indexPath: NSIndexPath) {
-        self.courseTableViewController?.reloadStoredCourse(course, newState: newState, indexPath: indexPath)
+    override func fromStoredCourseUpdateToUnsaved(course: Course) {
+        self.courseTableViewController?.removeCourseWithAnimation(course)
+        (self.parentViewController as! MainViewController).searchVC?.courseTableViewController!.updateCell(course, newState: false)
     }
     
     

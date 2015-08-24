@@ -11,5 +11,19 @@ import UIKit
 
 class UIViewControllerWrapper: UIViewController {
     
-    func changedCourse(course: Course, newState: Bool, indexPath: NSIndexPath) { }
+    func fromSearchUpdateToSaved(course: Course) {
+        assert(false, "fromSearchUpdateToSaved must be overriden by the subclass")
+    }
+    
+    func fromSearchUpdateToUnsaved(course: Course) {
+        assert(false, "fromSearchUpdateToUnsaved must be overriden by the subclass")
+    }
+    
+    func fromStoredCourseUpdateToSaved(course: Course) {
+        assert(false, "fromStoredCourseUpdateToSaved must be overriden by the subclass")
+    }
+    
+    func fromStoredCourseUpdateToUnsaved(course: Course) {
+        assert(false, "fromStoredCourseUpdateToUnsaved must be overriden by the subclass")
+    }
 }

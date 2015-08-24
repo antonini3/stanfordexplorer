@@ -13,7 +13,6 @@
 		7B06D0221B812A530067D1E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B06D0201B812A530067D1E9 /* LaunchScreen.xib */; };
 		7B06D02E1B812A530067D1E9 /* Stanford_ExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D02D1B812A530067D1E9 /* Stanford_ExplorerTests.swift */; };
 		7B06D03A1B813A770067D1E9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0391B813A770067D1E9 /* SearchViewController.swift */; };
-		7B06D03C1B813AAA0067D1E9 /* StoredCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D03B1B813AAA0067D1E9 /* StoredCoursesViewController.swift */; };
 		7B06D03E1B814D700067D1E9 /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D03D1B814D700067D1E9 /* DatabaseAccess.swift */; };
 		7B06D0451B814F950067D1E9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D0441B814F950067D1E9 /* AudioToolbox.framework */; };
 		7B06D04B1B814FC80067D1E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D04A1B814FC80067D1E9 /* CoreGraphics.framework */; };
@@ -35,6 +34,7 @@
 		7BCF92DE1B856AB400DCAE4E /* LocalDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */; };
 		7BCF92EA1B8A1AC200DCAE4E /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92E91B8A1AC200DCAE4E /* CourseTableViewController.swift */; };
 		7BCF92EE1B8A358F00DCAE4E /* UIViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92ED1B8A358F00DCAE4E /* UIViewControllerWrapper.swift */; };
+		7BCF92F01B8AB10E00DCAE4E /* StoredCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92EF1B8AB10E00DCAE4E /* StoredCoursesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		7B06D02C1B812A530067D1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B06D02D1B812A530067D1E9 /* Stanford_ExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stanford_ExplorerTests.swift; sourceTree = "<group>"; };
 		7B06D0391B813A770067D1E9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		7B06D03B1B813AAA0067D1E9 /* StoredCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCoursesViewController.swift; sourceTree = "<group>"; };
 		7B06D03D1B814D700067D1E9 /* DatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
 		7B06D0441B814F950067D1E9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7B06D04A1B814FC80067D1E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,6 +79,7 @@
 		7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDatastore.swift; sourceTree = "<group>"; };
 		7BCF92E91B8A1AC200DCAE4E /* CourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		7BCF92ED1B8A358F00DCAE4E /* UIViewControllerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerWrapper.swift; sourceTree = "<group>"; };
+		7BCF92EF1B8AB10E00DCAE4E /* StoredCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCoursesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,11 +137,11 @@
 			children = (
 				7B06D0151B812A530067D1E9 /* AppDelegate.swift */,
 				7B06D03D1B814D700067D1E9 /* DatabaseAccess.swift */,
-				7B06D0621B8177AC0067D1E9 /* MainViewController.swift */,
-				7B06D0391B813A770067D1E9 /* SearchViewController.swift */,
-				7B06D03B1B813AAA0067D1E9 /* StoredCoursesViewController.swift */,
-				7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */,
 				7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */,
+				7B06D0621B8177AC0067D1E9 /* MainViewController.swift */,
+				7BCF92EF1B8AB10E00DCAE4E /* StoredCoursesViewController.swift */,
+				7B06D0391B813A770067D1E9 /* SearchViewController.swift */,
+				7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */,
 				7BCF92D91B85678E00DCAE4E /* Course.swift */,
 				7BCF92D71B84443E00DCAE4E /* Utils.swift */,
 				7BCF92ED1B8A358F00DCAE4E /* UIViewControllerWrapper.swift */,
@@ -308,8 +308,8 @@
 				7B06D03A1B813A770067D1E9 /* SearchViewController.swift in Sources */,
 				7B06D0631B8177AC0067D1E9 /* MainViewController.swift in Sources */,
 				7BCF92D81B84443E00DCAE4E /* Utils.swift in Sources */,
-				7B06D03C1B813AAA0067D1E9 /* StoredCoursesViewController.swift in Sources */,
 				7B06D0161B812A530067D1E9 /* AppDelegate.swift in Sources */,
+				7BCF92F01B8AB10E00DCAE4E /* StoredCoursesViewController.swift in Sources */,
 				7B06D0651B817C6D0067D1E9 /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
