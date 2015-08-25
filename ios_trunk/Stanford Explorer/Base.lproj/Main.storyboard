@@ -69,8 +69,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Dm1-Ol-5vf"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Filters">
-                                            <color key="titleColor" red="0.68850772940000005" green="0.0" blue="0.1097033387" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.69019607843137254" green="0.0" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.74060921717171713" green="0.74060921717171713" blue="0.74060921717171713" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>

@@ -680,11 +680,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stanford Explorer/SearchViewController.swift"
-            timestampString = "462163810.147882"
+            timestampString = "462169534.112385"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "fromSearchUpdateToUnsaved(_:)"
             landmarkType = "5">
          </BreakpointContent>

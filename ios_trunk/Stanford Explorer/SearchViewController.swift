@@ -20,7 +20,7 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
     
     func setupFilters() {
         filtersView.parentView = self.view
-        filtersView.backgroundColor = UIColor(white: 0.8, alpha: 0.97)
+        filtersView.backgroundColor = UIColor(white: 0.9, alpha: 0.97)
         filtersView.layer.cornerRadius = 5.0
         filtersView.clipsToBounds = true
     }
@@ -39,6 +39,9 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
         self.searchBar.setImage(searchImage, forSearchBarIcon: UISearchBarIcon.Search, state: UIControlState.Normal)
         var cancelImage: UIImage = UIImage(named: "cardinal_cancel")!
         self.searchBar.setImage(cancelImage, forSearchBarIcon: UISearchBarIcon.Clear, state: UIControlState.Normal)
+
+//        var textFieldInsideSearchBarLabel = (self.searchBar.valueForKey("_searchField") as! UITextField).valueForKey("placeholderLabel") as? UILabel
+//        textFieldInsideSearchBarLabel?.textColor = UIColor(red: 176, green: 0, blue: 28)
     }
     
     
