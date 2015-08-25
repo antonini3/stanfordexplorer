@@ -27,6 +27,7 @@
 		7B06D05D1B81500B0067D1E9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B06D05C1B81500B0067D1E9 /* Accounts.framework */; };
 		7B06D0631B8177AC0067D1E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0621B8177AC0067D1E9 /* MainViewController.swift */; };
 		7B06D0651B817C6D0067D1E9 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */; };
+		7B5B1A391B8C00D200C33CF9 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B1A381B8C00D200C33CF9 /* FiltersView.swift */; };
 		7BCF92D51B84021200DCAE4E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCF92D31B84021200DCAE4E /* Bolts.framework */; };
 		7BCF92D61B84021200DCAE4E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCF92D41B84021200DCAE4E /* Parse.framework */; };
 		7BCF92D81B84443E00DCAE4E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92D71B84443E00DCAE4E /* Utils.swift */; };
@@ -72,6 +73,7 @@
 		7B06D05C1B81500B0067D1E9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7B06D0621B8177AC0067D1E9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		7B5B1A381B8C00D200C33CF9 /* FiltersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
 		7BCF92D31B84021200DCAE4E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../Downloads/parse-library-1.8.0/Bolts.framework"; sourceTree = "<group>"; };
 		7BCF92D41B84021200DCAE4E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../../Downloads/parse-library-1.8.0/Parse.framework"; sourceTree = "<group>"; };
 		7BCF92D71B84443E00DCAE4E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				7B06D0391B813A770067D1E9 /* SearchViewController.swift */,
 				7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */,
 				7BCF92D91B85678E00DCAE4E /* Course.swift */,
+				7B5B1A381B8C00D200C33CF9 /* FiltersView.swift */,
 				7BCF92D71B84443E00DCAE4E /* Utils.swift */,
 				7BCF92ED1B8A358F00DCAE4E /* UIViewControllerWrapper.swift */,
 				7BCF92E91B8A1AC200DCAE4E /* CourseTableViewController.swift */,
@@ -304,6 +307,7 @@
 				7BCF92DA1B85678E00DCAE4E /* Course.swift in Sources */,
 				7BCF92DE1B856AB400DCAE4E /* LocalDatastore.swift in Sources */,
 				7BCF92EE1B8A358F00DCAE4E /* UIViewControllerWrapper.swift in Sources */,
+				7B5B1A391B8C00D200C33CF9 /* FiltersView.swift in Sources */,
 				7B06D03E1B814D700067D1E9 /* DatabaseAccess.swift in Sources */,
 				7B06D03A1B813A770067D1E9 /* SearchViewController.swift in Sources */,
 				7B06D0631B8177AC0067D1E9 /* MainViewController.swift in Sources */,

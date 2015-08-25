@@ -56,27 +56,58 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                             </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAV-nt-eji">
-                                <rect key="frame" x="0.0" y="84" width="600" height="516"/>
+                                <rect key="frame" x="0.0" y="122" width="600" height="478"/>
                                 <connections>
                                     <segue destination="Qaa-Kg-he3" kind="embed" identifier="courseTableViewControllerSegue" id="OhE-hk-Qn4"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BJd-n9-cdQ" customClass="FiltersView" customModule="Stanford_Explorer" customModuleProvider="target">
+                                <rect key="frame" x="8" y="84" width="584" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Filters" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBh-FG-ROi">
+                                        <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Dm1-Ol-5vf"/>
+                                        </constraints>
+                                        <state key="normal" title="Filters">
+                                            <color key="titleColor" red="0.68850772940000005" green="0.0" blue="0.1097033387" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.74060921717171713" green="0.74060921717171713" blue="0.74060921717171713" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openFilters:" destination="BJd-n9-cdQ" eventType="touchUpInside" id="qos-YZ-Qzs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.74060921719999995" green="0.74060921719999995" blue="0.74060921719999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="PBh-FG-ROi" firstAttribute="leading" secondItem="BJd-n9-cdQ" secondAttribute="leading" id="2K9-3C-ALP"/>
+                                    <constraint firstItem="PBh-FG-ROi" firstAttribute="top" secondItem="BJd-n9-cdQ" secondAttribute="top" id="Hb3-Ww-xXr"/>
+                                    <constraint firstAttribute="trailing" secondItem="PBh-FG-ROi" secondAttribute="trailing" id="TcY-1f-xRQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="hYL-pm-Wk9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gAV-nt-eji" firstAttribute="top" secondItem="eD4-JO-uOy" secondAttribute="bottom" id="0jL-8a-8eh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eD4-JO-uOy" secondAttribute="trailing" id="1QA-Md-VFz"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="5UA-Et-88E"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="gAV-nt-eji" secondAttribute="bottom" id="8I8-VE-QsC"/>
+                            <constraint firstItem="BJd-n9-cdQ" firstAttribute="top" secondItem="eD4-JO-uOy" secondAttribute="bottom" id="DWv-tz-YHi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eD4-JO-uOy" secondAttribute="trailing" constant="-16" id="Ezs-cw-UxJ"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="Ija-HR-GGx"/>
+                            <constraint firstItem="BJd-n9-cdQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-8" id="J9n-Wd-ENC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BJd-n9-cdQ" secondAttribute="trailing" constant="-8" id="Md9-Ix-Go7"/>
+                            <constraint firstItem="gAV-nt-eji" firstAttribute="top" secondItem="BJd-n9-cdQ" secondAttribute="bottom" constant="8" id="Rkd-t1-llg"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="Wmn-sg-lG0"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="iDr-WU-gjC"/>
+                            <constraint firstItem="gAV-nt-eji" firstAttribute="top" secondItem="eD4-JO-uOy" secondAttribute="bottom" constant="38" id="n9x-8s-5ZK"/>
+                            <constraint firstItem="BJd-n9-cdQ" firstAttribute="top" secondItem="eD4-JO-uOy" secondAttribute="bottom" id="o6L-dh-Kat"/>
                             <constraint firstItem="gAV-nt-eji" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="oEl-XT-gSg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gAV-nt-eji" secondAttribute="trailing" constant="-16" id="uym-Ch-65K"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="filtersView" destination="BJd-n9-cdQ" id="LFq-OA-LeU"/>
                         <outlet property="searchBar" destination="eD4-JO-uOy" id="rhq-uE-fYN"/>
                     </connections>
                 </viewController>
@@ -129,11 +160,11 @@
                         <viewControllerLayoutGuide type="bottom" id="NTv-17-yUx"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P9o-hN-cta">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="516"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-EI-QIz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="516"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="172" id="dlv-Xg-Hyb" customClass="CourseTableViewCell" customModule="Stanford_Explorer" customModuleProvider="target">
@@ -189,24 +220,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srK-Ww-Gwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1612" y="-1392"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="pNW-l3-AOt">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="IRM-1Y-gGs" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y7E-tR-ppz"/>
-                        <viewControllerLayoutGuide type="bottom" id="IpD-cX-CUI"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hAm-pY-npF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KSq-6c-kZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

@@ -16,6 +16,15 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
     
     var courseTableViewController: CourseTableViewController?
     
+    @IBOutlet weak var filtersView: FiltersView!
+    
+    func setupFilters() {
+        filtersView.parentView = self.view
+        filtersView.backgroundColor = UIColor(white: 0.8, alpha: 0.97)
+        filtersView.layer.cornerRadius = 5.0
+        filtersView.clipsToBounds = true
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "courseTableViewControllerSegue" {
@@ -38,6 +47,7 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
         searchBar.delegate = self
         searchBar.enablesReturnKeyAutomatically = true
         setup()
+        setupFilters()
         
     }
 
