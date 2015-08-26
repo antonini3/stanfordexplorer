@@ -23,6 +23,7 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
         filtersView.backgroundColor = UIColor(white: 0.91, alpha: 0.95)
         filtersView.layer.cornerRadius = 5.0
         filtersView.clipsToBounds = true
+        filtersView.extendedHeight = Double(self.view.frame.height) - 75
     }
     
     

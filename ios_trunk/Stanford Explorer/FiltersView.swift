@@ -11,11 +11,9 @@ import UIKit
 
 class FiltersView: UIView {
     
-    var extendedHeight: Double = 300
+    var extendedHeight: Double?
     
     var shortenedHeight: Double = 30
-    
-    var heightDiff: Double = 300 - 30
     
     var filtersIsAnimating: Bool = false
     
@@ -45,7 +43,7 @@ class FiltersView: UIView {
     }
     
     func showFilters() {
-        var frame = CGRect(x: Double(self.frame.origin.x), y: Double(self.frame.origin.y), width: Double(self.frame.width), height: extendedHeight)
+        var frame = CGRect(x: Double(self.frame.origin.x), y: Double(self.frame.origin.y), width: Double(self.frame.width), height: extendedHeight!)
         self.animateFrame(frame) {
             self.filtersIsDisplayed = true
         }

@@ -189,7 +189,7 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         if indexPaths.count > 0 {
-            tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+            tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
     
