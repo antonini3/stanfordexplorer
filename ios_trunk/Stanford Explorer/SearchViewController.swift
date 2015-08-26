@@ -20,7 +20,7 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
     
     func setupFilters() {
         filtersView.parentView = self.view
-        filtersView.backgroundColor = UIColor(white: 0.9, alpha: 0.97)
+        filtersView.backgroundColor = UIColor(white: 0.91, alpha: 0.95)
         filtersView.layer.cornerRadius = 5.0
         filtersView.clipsToBounds = true
     }

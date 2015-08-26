@@ -17,7 +17,7 @@ class CourseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
 
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var instructorsLabel: UILabel!
     
     var parentVC: UIViewControllerWrapper?
     
@@ -66,7 +66,6 @@ class CourseTableViewCell: UITableViewCell {
     
     func checkHeight() {
         var shouldHide = (frame.size.height < CourseTableViewCell.expandedHeight)
-        descriptionLabel?.hidden = shouldHide
         storeButtonOutlet?.hidden = shouldHide
     }
     

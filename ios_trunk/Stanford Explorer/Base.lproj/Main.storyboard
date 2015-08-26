@@ -56,7 +56,7 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                             </searchBar>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAV-nt-eji">
-                                <rect key="frame" x="0.0" y="122" width="600" height="478"/>
+                                <rect key="frame" x="8" y="122" width="584" height="470"/>
                                 <connections>
                                     <segue destination="Qaa-Kg-he3" kind="embed" identifier="courseTableViewControllerSegue" id="OhE-hk-Qn4"/>
                                 </connections>
@@ -92,19 +92,18 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="eD4-JO-uOy" secondAttribute="trailing" id="1QA-Md-VFz"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="5UA-Et-88E"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="gAV-nt-eji" secondAttribute="bottom" id="8I8-VE-QsC"/>
+                            <constraint firstItem="gAV-nt-eji" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-15" id="7d0-34-GjF"/>
                             <constraint firstItem="BJd-n9-cdQ" firstAttribute="top" secondItem="eD4-JO-uOy" secondAttribute="bottom" id="DWv-tz-YHi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eD4-JO-uOy" secondAttribute="trailing" constant="-16" id="Ezs-cw-UxJ"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="Ija-HR-GGx"/>
                             <constraint firstItem="BJd-n9-cdQ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-8" id="J9n-Wd-ENC"/>
+                            <constraint firstItem="gAV-nt-eji" firstAttribute="top" secondItem="BJd-n9-cdQ" secondAttribute="bottom" constant="4" id="Lw2-mU-du0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BJd-n9-cdQ" secondAttribute="trailing" constant="-8" id="Md9-Ix-Go7"/>
-                            <constraint firstItem="gAV-nt-eji" firstAttribute="top" secondItem="BJd-n9-cdQ" secondAttribute="bottom" constant="8" id="Rkd-t1-llg"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="Wmn-sg-lG0"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="gAV-nt-eji" secondAttribute="bottom" constant="4" id="eRK-Xu-aKw"/>
                             <constraint firstItem="eD4-JO-uOy" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="iDr-WU-gjC"/>
-                            <constraint firstItem="gAV-nt-eji" firstAttribute="top" secondItem="eD4-JO-uOy" secondAttribute="bottom" constant="38" id="n9x-8s-5ZK"/>
                             <constraint firstItem="BJd-n9-cdQ" firstAttribute="top" secondItem="eD4-JO-uOy" secondAttribute="bottom" id="o6L-dh-Kat"/>
-                            <constraint firstItem="gAV-nt-eji" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="oEl-XT-gSg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gAV-nt-eji" secondAttribute="trailing" constant="-16" id="uym-Ch-65K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gAV-nt-eji" secondAttribute="trailing" constant="-15" id="uxl-gp-Tch"/>
                         </constraints>
                     </view>
                     <connections>
@@ -128,12 +127,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xld-oB-Z8z">
-                                <rect key="frame" x="-24" y="0.0" width="600" height="600"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="J33-IE-VwM"/>
-                                    <constraint firstAttribute="height" constant="600" id="SGG-hm-iWu"/>
-                                </constraints>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xld-oB-Z8z">
+                                <rect key="frame" x="4" y="4" width="592" height="592"/>
                                 <connections>
                                     <segue destination="Qaa-Kg-he3" kind="embed" identifier="storedCourseTableViewControllerSegue" id="gXy-EQ-P6k"/>
                                 </connections>
@@ -141,10 +136,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xld-oB-Z8z" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="0aj-rq-rVB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xld-oB-Z8z" secondAttribute="trailing" constant="-16" id="HTg-6t-hVZ"/>
-                            <constraint firstItem="xld-oB-Z8z" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="jOt-3m-XXH"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="xld-oB-Z8z" secondAttribute="bottom" id="jtK-xs-2nR"/>
+                            <constraint firstItem="xld-oB-Z8z" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" constant="4" id="1SM-38-jXb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xld-oB-Z8z" secondAttribute="trailing" constant="-12" id="UHD-pd-cFT"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="xld-oB-Z8z" secondAttribute="bottom" constant="4" id="Xvf-En-tSn"/>
+                            <constraint firstItem="xld-oB-Z8z" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-12" id="uwp-5W-JK4"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -161,33 +156,40 @@
                         <viewControllerLayoutGuide type="bottom" id="NTv-17-yUx"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="P9o-hN-cta">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-EI-QIz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="172" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1rR-EI-QIz">
+                                <rect key="frame" x="0.0" y="0.0" width="584" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="172" id="dlv-Xg-Hyb" customClass="CourseTableViewCell" customModule="Stanford_Explorer" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="172" id="dlv-Xg-Hyb" customClass="CourseTableViewCell" customModule="Stanford_Explorer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dlv-Xg-Hyb" id="Zxe-3y-EY4">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-3p-9Fs">
-                                                    <rect key="frame" x="78" y="14" width="493" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-3p-9Fs">
+                                                    <rect key="frame" x="15" y="14" width="554" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="EJf-FL-HOb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-im-cJg">
-                                                    <rect key="frame" x="78" y="100" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jerry Cain, Mehran Sahami" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-im-cJg">
+                                                    <rect key="frame" x="15" y="44" width="554" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="hd1-zc-JvE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.68850772940000005" green="0.0" blue="0.1097033387" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vu-UO-hhL">
-                                                    <rect key="frame" x="254" y="43" width="40" height="40"/>
+                                                    <rect key="frame" x="256" y="92" width="40" height="40"/>
                                                     <state key="normal" title="Button" image="grey_star"/>
                                                     <state key="selected" image="yellow_star"/>
                                                     <connections>
@@ -195,9 +197,18 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bgn-3p-9Fs" secondAttribute="trailing" constant="8" id="33J-qm-OWG"/>
+                                                <constraint firstItem="3V4-im-cJg" firstAttribute="leading" secondItem="Zxe-3y-EY4" secondAttribute="leading" constant="10" id="AUh-yc-KGS"/>
+                                                <constraint firstItem="bgn-3p-9Fs" firstAttribute="top" secondItem="Zxe-3y-EY4" secondAttribute="top" constant="8" id="LUc-Tu-Czu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3V4-im-cJg" secondAttribute="trailing" constant="8" id="P9z-UT-ZTa"/>
+                                                <constraint firstItem="3V4-im-cJg" firstAttribute="top" secondItem="bgn-3p-9Fs" secondAttribute="bottom" id="UUK-2a-dWg"/>
+                                                <constraint firstItem="bgn-3p-9Fs" firstAttribute="leading" secondItem="Zxe-3y-EY4" secondAttribute="leading" constant="8" id="eTT-sp-8yq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="descriptionLabel" destination="3V4-im-cJg" id="CBW-Lk-p59"/>
+                                            <outlet property="instructorsLabel" destination="3V4-im-cJg" id="RPW-4Z-uvT"/>
                                             <outlet property="nameLabel" destination="bgn-3p-9Fs" id="Gtr-bP-XsA"/>
                                             <outlet property="storeButtonOutlet" destination="7vu-UO-hhL" id="Wrx-Sg-qjJ"/>
                                         </connections>
