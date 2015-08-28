@@ -11,14 +11,23 @@ import re
 from collections import defaultdict
 import copy
 import json
+import time
 
 class QueryIndex:
 
-    def __init__(self):
+    def __init__(self, document_dict):
+        start = time.clock()
         self.index={}
         self.tf={}      #term frequencies
         self.idf={}    #inverse document frequencies
         self.classes = None
+
+        self.stopwordsFile= document_dict.get("stopwords")
+        self.indexFile= document_dict.get("inverted_index")
+        self.tf_file = document_dict.get('tf')
+        self.idf_file = document_dict.get('idf')
+        self.classes_file = document_dict.get('classes')
+        print 'initialization took %.03f sec.' % (time.clock()-start)
 
 
     def intersectLists(self,lists):
@@ -56,13 +65,15 @@ class QueryIndex:
 
     def readIndex(self):
         #read main index
-        
+        start = time.clock()
         self.index = json.load(open(self.indexFile, 'r'))
-        self.classes = json.load(open(self.classes, 'r'))['results']
+        self.classes = json.load(open(self.classes_file, 'r'))['results']
         self.tf = json.load(open(self.tf_file, 'r'))
         self.idf = json.load(open(self.idf_file, 'r'))
         #first read the number of documents
         self.numDocuments=int(len(self.classes))
+        print 'loading documents took %.03f sec.' % (time.clock()-start)
+
         
      
     def dotProduct(self, vec1, vec2):
@@ -73,6 +84,7 @@ class QueryIndex:
         
     def rankDocuments(self, terms, docs):
         #term at a time evaluation
+        start = time.clock()
         docVectors=defaultdict(lambda: [0]*len(terms))
         queryVector=[0]*len(terms)
         for termIndex, term in enumerate(terms):
@@ -89,12 +101,15 @@ class QueryIndex:
         docScores.sort(reverse=True)
         resultDocs=[x[1] for x in docScores][:10]
         #print document titles instead if document id's
+        print 'ranking documents took %.03f sec.' % (time.clock()-start)
+        curr = time.clock()
         result_titles = set()
-        for id_ in resultDocs:
+        for result, id_ in docScores:
             for class_datum in self.classes:
                 if id_ == class_datum['course_id']:
-                    result_titles.append(class_datum['full_title'])
-        print '\n'.join(result_titles), '\n'
+                    result_titles.add((class_datum['full_title'], result))
+        print 'getting document names took %.03f sec.' % (time.clock()-start)
+        return result_titles
 
 
     def queryType(self,q):
@@ -125,10 +140,11 @@ class QueryIndex:
         else:
             postings=self.index[term]
             docs=[x[0] for x in postings]
-            self.rankDocuments(q, docs)
+            return self.rankDocuments(q, docs)
           
 
     def ftq(self,q):
+        start = time.clock()
         """Free Text Query"""
         q=self.getTerms(q)
         if len(q)==0:
@@ -144,9 +160,10 @@ class QueryIndex:
             except:
                 #term not in index
                 pass
-        
-        li=list(li)
-        self.rankDocuments(q, li)
+            
+            li=list(li)
+        print 'processing query took %.03f sec.' % (time.clock()-start)
+        return self.rankDocuments(q, li)
 
 
     def pq(self,q):
@@ -161,7 +178,7 @@ class QueryIndex:
             return
 
         phraseDocs=self.pqDocs(q)
-        self.rankDocuments(q, phraseDocs)
+        return self.rankDocuments(q, phraseDocs)
         
         
     def pqDocs(self, q):
@@ -203,18 +220,7 @@ class QueryIndex:
         
         return result
 
-        
-    def getParams(self):
-        param=sys.argv
-        self.stopwordsFile=param[1]
-        self.indexFile=param[2]
-        self.tf_file = param[3]
-        self.idf_file = param[4]
-        self.classes = param[5]
-
-
     def queryIndex(self):
-        self.getParams()
         self.readIndex()  
         self.getStopwords() 
 
@@ -222,16 +228,34 @@ class QueryIndex:
             q=sys.stdin.readline()
             if q=='':
                 break
+            print _query_index(self, q)
 
+    def _query_index(self, q):
             qt=self.queryType(q)
             if qt=='OWQ':
-                self.owq(q)
+                return self.owq(q)
             elif qt=='FTQ':
-                self.ftq(q)
+                return self.ftq(q)
             elif qt=='PQ':
-                self.pq(q)
-        
+                return self.pq(q)
         
 if __name__=='__main__':
-    q=QueryIndex()
+    document_dict = getParams()
+    q=QueryIndex(document_dict)
     q.queryIndex()
+
+
+    def getParams():
+        param=sys.argv
+        stopwordsFile=param[1]
+        indexFile=param[2]
+        tf_file = param[3]
+        idf_file = param[4]
+        classes = param[5]
+        document_dict = {'inverted_index': indexFile,
+                    "tf": tf_file,
+                    "idf": tf_file,
+                    "classes": idf_file,
+                    "stopwords": stopwordsFile
+                    }
+        return document_dict
