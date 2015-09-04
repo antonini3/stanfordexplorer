@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>293D060D-A6A4-417D-8EC2-BD46253A85C7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Stanford Explorer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>246FC88793E60BFDD24879989FA6DDFF335597D2</key>
+		<string>https://github.com/antonini3/stanfordexplorer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios_trunk/Stanford Explorer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>246FC88793E60BFDD24879989FA6DDFF335597D2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/antonini3/stanfordexplorer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>246FC88793E60BFDD24879989FA6DDFF335597D2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>246FC88793E60BFDD24879989FA6DDFF335597D2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SE</string>
+		</dict>
+	</array>
+</dict>
+</plist>

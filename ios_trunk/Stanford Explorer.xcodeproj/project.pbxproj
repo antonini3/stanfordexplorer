@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EEE3ACAC1AB184422536BFC /* Pods_Stanford_Explorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B11A2E66D514AAD7692025A /* Pods_Stanford_Explorer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7B06D0161B812A530067D1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0151B812A530067D1E9 /* AppDelegate.swift */; };
 		7B06D01D1B812A530067D1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B06D01B1B812A530067D1E9 /* Main.storyboard */; };
 		7B06D01F1B812A530067D1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B06D01E1B812A530067D1E9 /* Images.xcassets */; };
@@ -28,14 +29,14 @@
 		7B06D0631B8177AC0067D1E9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0621B8177AC0067D1E9 /* MainViewController.swift */; };
 		7B06D0651B817C6D0067D1E9 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */; };
 		7B5B1A391B8C00D200C33CF9 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B1A381B8C00D200C33CF9 /* FiltersView.swift */; };
-		7BCF92D51B84021200DCAE4E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCF92D31B84021200DCAE4E /* Bolts.framework */; };
-		7BCF92D61B84021200DCAE4E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCF92D41B84021200DCAE4E /* Parse.framework */; };
 		7BCF92D81B84443E00DCAE4E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92D71B84443E00DCAE4E /* Utils.swift */; };
 		7BCF92DA1B85678E00DCAE4E /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92D91B85678E00DCAE4E /* Course.swift */; };
 		7BCF92DE1B856AB400DCAE4E /* LocalDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */; };
 		7BCF92EA1B8A1AC200DCAE4E /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92E91B8A1AC200DCAE4E /* CourseTableViewController.swift */; };
 		7BCF92EE1B8A358F00DCAE4E /* UIViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92ED1B8A358F00DCAE4E /* UIViewControllerWrapper.swift */; };
 		7BCF92F01B8AB10E00DCAE4E /* StoredCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF92EF1B8AB10E00DCAE4E /* StoredCoursesViewController.swift */; };
+		E74D4CDB1B9A1AD000F299DA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74D4CD91B9A1AD000F299DA /* Bolts.framework */; };
+		E74D4CDC1B9A1AD000F299DA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74D4CDA1B9A1AD000F299DA /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B11A2E66D514AAD7692025A /* Pods_Stanford_Explorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stanford_Explorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B06D0101B812A530067D1E9 /* Stanford Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stanford Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B06D0141B812A530067D1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B06D0151B812A530067D1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,14 +76,17 @@
 		7B06D0621B8177AC0067D1E9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7B06D0641B817C6D0067D1E9 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		7B5B1A381B8C00D200C33CF9 /* FiltersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
-		7BCF92D31B84021200DCAE4E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../Downloads/parse-library-1.8.0/Bolts.framework"; sourceTree = "<group>"; };
-		7BCF92D41B84021200DCAE4E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../../Downloads/parse-library-1.8.0/Parse.framework"; sourceTree = "<group>"; };
 		7BCF92D71B84443E00DCAE4E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7BCF92D91B85678E00DCAE4E /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		7BCF92DD1B856AB400DCAE4E /* LocalDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDatastore.swift; sourceTree = "<group>"; };
 		7BCF92E91B8A1AC200DCAE4E /* CourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		7BCF92ED1B8A358F00DCAE4E /* UIViewControllerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerWrapper.swift; sourceTree = "<group>"; };
 		7BCF92EF1B8AB10E00DCAE4E /* StoredCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredCoursesViewController.swift; sourceTree = "<group>"; };
+		A068E5735C654005A5C6ECFC /* Pods-Stanford Explorer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stanford Explorer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stanford Explorer/Pods-Stanford Explorer.debug.xcconfig"; sourceTree = "<group>"; };
+		AE237E879082569AFCB84AA6 /* Pods-Stanford Explorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stanford Explorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stanford Explorer/Pods-Stanford Explorer.release.xcconfig"; sourceTree = "<group>"; };
+		E74D4CD91B9A1AD000F299DA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/parse-library-1.8.2/Bolts.framework"; sourceTree = "<group>"; };
+		E74D4CDA1B9A1AD000F299DA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/parse-library-1.8.2/Parse.framework"; sourceTree = "<group>"; };
+		E7A4B2271B9A22FA00CEB052 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BCF92D51B84021200DCAE4E /* Bolts.framework in Frameworks */,
-				7BCF92D61B84021200DCAE4E /* Parse.framework in Frameworks */,
 				7B06D05D1B81500B0067D1E9 /* Accounts.framework in Frameworks */,
 				7B06D05B1B8150010067D1E9 /* libsqlite3.dylib in Frameworks */,
+				E74D4CDC1B9A1AD000F299DA /* Parse.framework in Frameworks */,
 				7B06D0591B814FF80067D1E9 /* libz.dylib in Frameworks */,
 				7B06D0571B814FF00067D1E9 /* SystemConfiguration.framework in Frameworks */,
 				7B06D0551B814FE90067D1E9 /* StoreKit.framework in Frameworks */,
@@ -102,6 +106,8 @@
 				7B06D04D1B814FD00067D1E9 /* CFNetwork.framework in Frameworks */,
 				7B06D04B1B814FC80067D1E9 /* CoreGraphics.framework in Frameworks */,
 				7B06D0451B814F950067D1E9 /* AudioToolbox.framework in Frameworks */,
+				E74D4CDB1B9A1AD000F299DA /* Bolts.framework in Frameworks */,
+				4EEE3ACAC1AB184422536BFC /* Pods_Stanford_Explorer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +128,7 @@
 				7B06D02A1B812A530067D1E9 /* Stanford ExplorerTests */,
 				7B06D0111B812A530067D1E9 /* Products */,
 				7B06D0431B814F700067D1E9 /* Frameworks */,
+				BA95E1084964490667B3F3C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +156,7 @@
 				7BCF92D71B84443E00DCAE4E /* Utils.swift */,
 				7BCF92ED1B8A358F00DCAE4E /* UIViewControllerWrapper.swift */,
 				7BCF92E91B8A1AC200DCAE4E /* CourseTableViewController.swift */,
+				E7A4B2271B9A22FA00CEB052 /* BridgingHeader.h */,
 				7B06D01B1B812A530067D1E9 /* Main.storyboard */,
 				7B06D01E1B812A530067D1E9 /* Images.xcassets */,
 				7B06D0201B812A530067D1E9 /* LaunchScreen.xib */,
@@ -185,8 +193,8 @@
 		7B06D0431B814F700067D1E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7BCF92D31B84021200DCAE4E /* Bolts.framework */,
-				7BCF92D41B84021200DCAE4E /* Parse.framework */,
+				E74D4CD91B9A1AD000F299DA /* Bolts.framework */,
+				E74D4CDA1B9A1AD000F299DA /* Parse.framework */,
 				7B06D05C1B81500B0067D1E9 /* Accounts.framework */,
 				7B06D05A1B8150010067D1E9 /* libsqlite3.dylib */,
 				7B06D0581B814FF80067D1E9 /* libz.dylib */,
@@ -198,9 +206,19 @@
 				7B06D04C1B814FD00067D1E9 /* CFNetwork.framework */,
 				7B06D04A1B814FC80067D1E9 /* CoreGraphics.framework */,
 				7B06D0441B814F950067D1E9 /* AudioToolbox.framework */,
+				6B11A2E66D514AAD7692025A /* Pods_Stanford_Explorer.framework */,
 			);
 			name = Frameworks;
 			path = "Stanford Explorer.xcodeproj";
+			sourceTree = "<group>";
+		};
+		BA95E1084964490667B3F3C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A068E5735C654005A5C6ECFC /* Pods-Stanford Explorer.debug.xcconfig */,
+				AE237E879082569AFCB84AA6 /* Pods-Stanford Explorer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B06D0311B812A530067D1E9 /* Build configuration list for PBXNativeTarget "Stanford Explorer" */;
 			buildPhases = (
+				ACF0260442DDE5A3F05D16F0 /* Check Pods Manifest.lock */,
 				7B06D00C1B812A530067D1E9 /* Sources */,
 				7B06D00D1B812A530067D1E9 /* Frameworks */,
 				7B06D00E1B812A530067D1E9 /* Resources */,
+				0083549C0920EEA6663770DA /* Embed Pods Frameworks */,
+				995507D95B6B1B8854B0B644 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +318,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0083549C0920EEA6663770DA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanford Explorer/Pods-Stanford Explorer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		995507D95B6B1B8854B0B644 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanford Explorer/Pods-Stanford Explorer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACF0260442DDE5A3F05D16F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7B06D00C1B812A530067D1E9 /* Sources */ = {
@@ -439,6 +508,7 @@
 		};
 		7B06D0321B812A530067D1E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A068E5735C654005A5C6ECFC /* Pods-Stanford Explorer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -450,15 +520,18 @@
 					"$(PROJECT_DIR)/Stanford",
 					Explorer.xcodeproj,
 					"/Users/antonaf/Downloads/parse-library-1.8.0",
+					"/Users/aapostol/Downloads/parse-library-1.8.2",
 				);
 				INFOPLIST_FILE = "Stanford Explorer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Stanford Explorer/BridgingHeader.h";
 			};
 			name = Debug;
 		};
 		7B06D0331B812A530067D1E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE237E879082569AFCB84AA6 /* Pods-Stanford Explorer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -470,10 +543,12 @@
 					"$(PROJECT_DIR)/Stanford",
 					Explorer.xcodeproj,
 					"/Users/antonaf/Downloads/parse-library-1.8.0",
+					"/Users/aapostol/Downloads/parse-library-1.8.2",
 				);
 				INFOPLIST_FILE = "Stanford Explorer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Stanford Explorer/BridgingHeader.h";
 			};
 			name = Release;
 		};

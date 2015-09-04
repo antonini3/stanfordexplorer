@@ -24,6 +24,7 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
         filtersView.layer.cornerRadius = 5.0
         filtersView.clipsToBounds = true
         filtersView.extendedHeight = Double(self.view.frame.height) - 75
+//        filtersView.filterButton = VBFPopFlatButton.a
     }
     
     

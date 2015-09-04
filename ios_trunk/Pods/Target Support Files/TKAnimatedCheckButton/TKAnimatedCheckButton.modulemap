@@ -1,0 +1,6 @@
+framework module TKAnimatedCheckButton {
+  umbrella header "TKAnimatedCheckButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

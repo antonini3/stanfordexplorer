@@ -157,6 +157,7 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         cell.courseStored = appDelegate.isCourseStored(courses[indexPath.row])
         
+        
         cell.parentVC = self.parentVC
 
         return cell

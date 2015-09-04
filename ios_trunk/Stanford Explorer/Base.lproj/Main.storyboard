@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nDu-Ic-1SD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nDu-Ic-1SD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -86,6 +86,9 @@
                                     <constraint firstAttribute="trailing" secondItem="PBh-FG-ROi" secondAttribute="trailing" id="TcY-1f-xRQ"/>
                                     <constraint firstAttribute="height" constant="30" id="hYL-pm-Wk9"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="filterButton" destination="PBh-FG-ROi" id="lB5-kD-TKa"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -188,12 +191,13 @@
                                                     <color key="textColor" red="0.68850772940000005" green="0.0" blue="0.1097033387" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vu-UO-hhL">
-                                                    <rect key="frame" x="256" y="92" width="40" height="40"/>
-                                                    <state key="normal" title="Button" image="grey_star"/>
-                                                    <state key="selected" image="yellow_star"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb8-HR-SH2">
+                                                    <rect key="frame" x="287" y="100" width="46" height="30"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
-                                                        <action selector="storeCourse:" destination="dlv-Xg-Hyb" eventType="touchUpInside" id="lOH-Ap-6K5"/>
+                                                        <action selector="storeCourse:" destination="dlv-Xg-Hyb" eventType="touchUpInside" id="vVy-P5-HUg"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -210,7 +214,7 @@
                                         <connections>
                                             <outlet property="instructorsLabel" destination="3V4-im-cJg" id="RPW-4Z-uvT"/>
                                             <outlet property="nameLabel" destination="bgn-3p-9Fs" id="Gtr-bP-XsA"/>
-                                            <outlet property="storeButtonOutlet" destination="7vu-UO-hhL" id="Wrx-Sg-qjJ"/>
+                                            <outlet property="storeButtonOutlet" destination="wb8-HR-SH2" id="YW0-ag-b48"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -234,10 +238,6 @@
             <point key="canvasLocation" x="1612" y="-1392"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="grey_star" width="512" height="512"/>
-        <image name="yellow_star" width="512" height="512"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OhE-hk-Qn4"/>
     </inferredMetricsTieBreakers>

@@ -1,0 +1,12 @@
+platform :ios, "8.0"
+use_frameworks!
+
+target 'Stanford Explorer' do
+    pod 'TKAnimatedCheckButton'
+    pod 'VBFPopFlatButton'
+end
+
+target 'Stanford ExplorerTests' do
+
+end
+

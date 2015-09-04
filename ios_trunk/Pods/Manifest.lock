@@ -1,0 +1,16 @@
+PODS:
+  - pop (1.0.7)
+  - TKAnimatedCheckButton (0.3)
+  - VBFPopFlatButton (0.0.6):
+    - pop
+
+DEPENDENCIES:
+  - TKAnimatedCheckButton
+  - VBFPopFlatButton
+
+SPEC CHECKSUMS:
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  TKAnimatedCheckButton: 0bccc90aa642b0aa7e8bd3dc952ed2fb641cc752
+  VBFPopFlatButton: 782344da63f104c279a857d806e065117a7e1196
+
+COCOAPODS: 0.38.2

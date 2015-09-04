@@ -25,6 +25,8 @@ class FiltersView: UIView {
     
     var blurView: UIView?
     
+    @IBOutlet var filterButton: UIButton!
+    
     @IBAction func openFilters(sender: AnyObject) {
         if (filtersIsDisplayed) {
             hideFilters()
