@@ -19,12 +19,12 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
     @IBOutlet weak var filtersView: FiltersView!
     
     func setupFilters() {
-        filtersView.parentView = self.view
+        filtersView.parentViewController = self
         filtersView.backgroundColor = UIColor(white: 0.91, alpha: 0.95)
         filtersView.layer.cornerRadius = 5.0
         filtersView.clipsToBounds = true
         filtersView.extendedHeight = Double(self.view.frame.height) - 75
-//        filtersView.filterButton = VBFPopFlatButton.a
+
     }
     
     

@@ -21,13 +21,14 @@ class FiltersView: UIView {
     
     var filtersIsDisplayed: Bool = false
     
-    var parentView: UIView?
+    var parentViewController: SearchViewController?
     
     var blurView: UIView?
     
     @IBOutlet var filterButton: UIButton!
     
     @IBAction func openFilters(sender: AnyObject) {
+        
         if (filtersIsDisplayed) {
             hideFilters()
             //animateBlur(false) {}
@@ -35,11 +36,13 @@ class FiltersView: UIView {
             showFilters()
             //animateBlur(true) {}
         }
+       
     }
     
     func hideFilters() {
         var frame = CGRect(x: Double(self.frame.origin.x), y: Double(self.frame.origin.y), width: Double(self.frame.width), height: shortenedHeight)
         self.animateFrame(frame) {
+            self.parentViewController!.dismissKeyboard()
             self.filtersIsDisplayed = false
         }
     }
@@ -47,6 +50,8 @@ class FiltersView: UIView {
     func showFilters() {
         var frame = CGRect(x: Double(self.frame.origin.x), y: Double(self.frame.origin.y), width: Double(self.frame.width), height: extendedHeight!)
         self.animateFrame(frame) {
+            
+            self.parentViewController!.dismissKeyboard()
             self.filtersIsDisplayed = true
         }
     }
@@ -65,41 +70,21 @@ class FiltersView: UIView {
             
             UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 self.frame = frame
+//                var newFrame = self.filterButton.frame
+//                newFrame.origin.y += 50
+//                self.filterButton.frame = newFrame
 
                 }, completion: c
             )
         }
+
+//        UIView.animateWithDuration(0.5 as NSTimeInterval, delay: 0.2 as NSTimeInterval, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+//            self.filterButton.frame = CGRectMake(
+//                self.filterButton.frame.origin.x,
+//                self.filterButton.frame.origin.y + 50,
+//                self.filterButton.frame.size.width,
+//                self.filterButton.frame.size.height)
+//        }, completion: nil)
     }
     
-    func animateBlur(shouldBlur: Bool, completion: () -> Void) {
-        
-        let c = { (completed: Bool) -> Void in
-            self.blurIsAnimating = false
-            if (completed) {
-                completion()
-            }
-        }
-        
-        if (!self.blurIsAnimating) {
-            self.blurIsAnimating = true
-            
-            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                if self.blurView == nil {
-                    self.blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
-                    self.blurView!.frame = self.parentView!.bounds
-                    self.parentView!.addSubview(self.blurView!)
-                }
-                if shouldBlur {
-                    self.blurView?.removeFromSuperview()
-                } else {
-                    self.parentView!.insertSubview(self.blurView!, belowSubview: self)
-                }
-                }, completion: c
-            )
-        }
-        
-
-    }
-    
-
 }
