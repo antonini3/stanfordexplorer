@@ -17,7 +17,7 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    var selectedIndexPath: NSIndexPath?
+    var selectedIndexPaths: Set<NSIndexPath>?
     
     var courses: [Course]!
     
@@ -34,6 +34,8 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
     let cellID = "Cell"
     
     func setup() {
+        selectedIndexPaths = Set<NSIndexPath>()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillAppear:", name: UIKeyboardWillShowNotification, object: nil)
         self.courseTable.scrollsToTop = true
         
@@ -78,27 +80,23 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
         view.endEditing(true)
     }
     
-    func clearExpandedCell(animation: Bool) {
-        if animation {
-            var indexPaths: Array<NSIndexPath> = []
-            let previousIndexPath = selectedIndexPath
-            selectedIndexPath = nil
-            if let previous = previousIndexPath {
-                self.courseTable.reloadRowsAtIndexPaths([previous], withRowAnimation: UITableViewRowAnimation.Automatic)
-            }
-        } else {
-            self.selectedIndexPath = nil
+    func clearExpandedCells() {
+        var indexPaths = Array(selectedIndexPaths!)
+        selectedIndexPaths!.removeAll()
+        if indexPaths.count > 0 {
+            self.courseTable.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
         }
+        
     }
     
     
     func keyboardWillAppear(notification: NSNotification) {
-        var indexPaths: Array<NSIndexPath> = []
-        let previousIndexPath = selectedIndexPath
-        selectedIndexPath = nil
-        if let previous = previousIndexPath {
-            self.courseTable.reloadRowsAtIndexPaths([previous], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
+//        var indexPaths: Array<NSIndexPath> = []
+//        let previousIndexPath = selectedIndexPath
+//        selectedIndexPath = nil
+//        if let previous = previousIndexPath {
+//            self.courseTable.reloadRowsAtIndexPaths([previous], withRowAnimation: UITableViewRowAnimation.Automatic)
+//        }
         
     }
     
@@ -170,28 +168,27 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         dismissKeyboard()
-        let previousIndexPath = selectedIndexPath
-        
-        if indexPath == previousIndexPath {
-            selectedIndexPath = nil
+        if selectedIndexPaths!.contains(indexPath) {
+            selectedIndexPaths!.remove(indexPath)
         } else {
-            selectedIndexPath = indexPath
+            selectedIndexPaths!.insert(indexPath)
         }
-        
-        var indexPaths: Array<NSIndexPath> = []
-        if let previous = previousIndexPath {
-            if previousIndexPath?.row < self.courses.count {
-                indexPaths += [previous]
+//        reloadAllRows()
+        tableView.reloadRowsAtIndexPaths(reloadableIndexPaths(indexPath), withRowAnimation: UITableViewRowAnimation.Fade)
+    }
+    
+    func reloadableIndexPaths(indexPath: NSIndexPath) -> [NSIndexPath] {
+        var lowestRow = indexPath.row;
+        for s in Array(selectedIndexPaths!) {
+            if s.row < lowestRow {
+                lowestRow = s.row
             }
         }
-        
-        if let current = selectedIndexPath {
-            indexPaths += [current]
+        var indexPaths = [NSIndexPath]()
+        for var row = lowestRow; row < self.courseTable.numberOfRowsInSection(0); ++row {
+            indexPaths.append(NSIndexPath(forRow: row, inSection: 0))
         }
-        
-        if indexPaths.count > 0 {
-            tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
+        return indexPaths
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -203,7 +200,7 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath == selectedIndexPath {
+        if selectedIndexPaths!.contains(indexPath) {
             return CourseTableViewCell.expandedHeight
         } else {
             return CourseTableViewCell.defaultHeight
@@ -234,14 +231,18 @@ class CourseTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func updateSelectedPathFromIndex(indexPath: NSIndexPath) {
-        if selectedIndexPath != nil {
-            if indexPath.row < selectedIndexPath?.row {
-                selectedIndexPath = NSIndexPath(forRow: selectedIndexPath!.row - 1, inSection: 0)
-            } else if indexPath.row == selectedIndexPath!.row {
-                selectedIndexPath = nil
+        for selectedIndex in Array(selectedIndexPaths!) {
+            if indexPath.row < selectedIndex.row {
+                selectedIndexPaths!.remove(selectedIndex)
+                selectedIndexPaths!.insert(NSIndexPath(forRow: selectedIndex.row - 1, inSection: 0))
+            } else if indexPath.row == selectedIndex.row {
+                selectedIndexPaths!.remove(selectedIndex)
             }
         }
+//        if indexPath.row < selectedIndexPath?.row {
+//            selectedIndexPath = NSIndexPath(forRow: selectedIndexPath!.row - 1, inSection: 0)
+//        } else if indexPath.row == selectedIndexPath!.row {
+//            selectedIndexPath = nil
+//        }
     }
-    
-    
 }

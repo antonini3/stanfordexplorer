@@ -68,12 +68,12 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
     
     
     func searchBar(_classSearch: UISearchBar, textDidChange searchText: String) {
-        self.courseTableViewController?.clearExpandedCell(true)
+        self.courseTableViewController?.clearExpandedCells()
         self.courseTableViewController?.runSearch(searchText)
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.courseTableViewController?.clearExpandedCell(true)
+        self.courseTableViewController?.clearExpandedCells()
         self.courseTableViewController?.runSearch(searchBar.text)
         dismissKeyboard()
     }
@@ -85,7 +85,7 @@ class SearchViewController: UIViewControllerWrapper, UISearchBarDelegate {
     
     
     func keyboardWillAppear(notification: NSNotification) {
-        self.courseTableViewController?.clearExpandedCell(true)
+        self.courseTableViewController?.clearExpandedCells()
     }
     
     override func fromSearchUpdateToSaved(course: Course) {
